@@ -45,12 +45,12 @@ async function scrapeInfiniteScrollItems(page, extractItems, targetItemCount, de
     return items; 
 
 }
-async function main(){
+async function main(zip, category){
     const browser = await puppeteer.launch({headless: false}); 
     const page = await browser.newPage(); 
     page.setViewport({width: 1200, height: 926}); 
 
-    await page.goto("https://products.wholefoodsmarket.com/search?sort=relevance&store=10518&category=produce"); 
+    await page.goto(`https://products.wholefoodsmarket.com/search?sort=relevance&store=${zip}&category=${category}`); 
     const html = await page.content(); 
     const $ = cheerio.load(html); 
 
@@ -85,4 +85,10 @@ async function main(){
 
 
 
-main(); 
+let zip = '10518'; 
+//let category = 'produce'; 
+let categories = ['produce', ]
+
+for(let i = 0; i < categories.length; i++){
+    main(zip, category); 
+}
