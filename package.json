@@ -1,7 +1,6 @@
 {
   "name": "whole-foods-scraper",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +18,9 @@
   "homepage": "https://github.com/jchen143/whole-foods-scraper#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "mongoose": "^5.10.9",
     "puppeteer": "^5.3.1"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
